@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  cassandra:
+    image: 'cassandra:latest'
+    healthcheck:
+        test: ["CMD", "cqlsh", "-e", "describe keyspaces" ]
+        interval: 5s
+        timeout: 5s
+        retries: 60
+    ports:
+      - '7000:7000'
+      - '9042:9042'
+    volumes:
+      - 'cassandra_data:/var/lib/cassandra'
+    environment:
+      - CASSANDRA_SEEDS=cassandra
+    #   - CASSANDRA_PASSWORD_SEEDER=yes
+    #   - CASSANDRA_PASSWORD=cassandra
+volumes:
+    cassandra_data:
+      driver: local
