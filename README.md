@@ -19,7 +19,7 @@ COPY Inspection (idrestaurant, inspectiondate, violationcode, violationdescripti
 * Count the number of inspection in the table `Inspection`
 
 ## Ex 2: request data with python
-1. Print first ten restaurants
+1. Print top ten restaurants
 2. Print names of restaurants
 3. Print the name and the borough of restaurant `41569764`
 4. Print dates and grades of inspections of restaurant `41569764`
